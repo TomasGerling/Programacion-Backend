@@ -1,0 +1,15 @@
+{
+    "ID":1,
+    "name":"Mesa redonda",
+    "price":200
+}
+{
+    "ID":2,
+    "name":"Mesa triangular",
+    "price":200
+}
+{
+    "ID":3,
+    "name":"Mesa cuadrada",
+    "price":200
+}
