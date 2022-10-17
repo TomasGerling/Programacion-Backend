@@ -1,15 +1,17 @@
-{
-    "ID":1,
-    "name":"Mesa redonda",
-    "price":200
-}
-{
-    "ID":2,
-    "name":"Mesa triangular",
-    "price":200
-}
-{
-    "ID":3,
-    "name":"Mesa cuadrada",
-    "price":200
-}
+[
+  {
+    "title": "Mesa redonda",
+    "price": 1400,
+    "id": 1
+  },
+  {
+    "title": "Mesa cuadrada",
+    "price": 1900,
+    "id": 2
+  },
+  {
+    "title": "Mesa triangular",
+    "price": 200,
+    "id": 3
+  }
+]
