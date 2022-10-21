@@ -1,0 +1,17 @@
+[
+    {
+        "title": "Mesa redonda",
+        "price": 400,
+        "id": 1
+    },
+    {
+        "title": "Mesa cuadrada",
+        "price": 350,
+        "id": 2
+    },
+    {
+        "title": "Mesa triangular",
+        "price": 200,
+        "id": 3
+    }
+]
