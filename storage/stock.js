@@ -1,6 +1,6 @@
-const Contenedor = require('./actividad')
+const Container = require('./Container')
 
-const Stock = new Contenedor('./productos.txt')
+const Stock = new Container('./productos.txt')
 
 const newProduct = async () => {
     try {

@@ -1,12 +1,12 @@
 [
   {
     "title": "Mesa redonda",
-    "price": 1400,
+    "price": 400,
     "id": 1
   },
   {
     "title": "Mesa cuadrada",
-    "price": 1900,
+    "price": 350,
     "id": 2
   },
   {
