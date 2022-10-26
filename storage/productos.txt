@@ -28,20 +28,5 @@
     "title": "Mesa ratona",
     "price": 1600,
     "id": 6
-  },
-  {
-    "title": "Mesa Rectangular",
-    "price": 400,
-    "id": 7
-  },
-  {
-    "title": "Mesa de escritorio",
-    "price": 540,
-    "id": 8
-  },
-  {
-    "title": "Mesa ratona",
-    "price": 1600,
-    "id": 9
   }
 ]
