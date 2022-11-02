@@ -1,0 +1,48 @@
+<%- include('./partials/header') %>
+
+<div class="container">
+    <hr />
+    <div class="row">
+        <div class="col-6 mx-auto">
+        <h3>Productos</h3>
+        <a href="/">
+            <button type="button" class="btn btn-primary mb-3">
+            Inicio
+            </button>
+        </a>
+        <div class="col">
+            <% if(hasContent) { %>
+            <table class="table">
+            <thead>
+                <tr>
+                <th scope="col">#</th>
+                <th scope="col">Titulo</th>
+                <th scope="col">Precio</th>
+                <th scope="col">Imagen</th>
+                </tr>
+            </thead>
+            <tbody id="table-content">
+                <% products.forEach(product => { %>
+                <tr>
+                <th scope="row"><%= product.id %></th>
+                <td><%- product.title %></td>
+                <td><%- product.price %></td>
+                <td>
+                    <a href="<%= product.thumbnail %> "
+                    >Link a la imagen</a
+                    >
+                </td>
+                </tr>
+                <% }) %>
+            </tbody>
+            </table>
+            <% } else { %>
+            <p>Aun no hay productos cargados</p>
+            <% } %>
+        </div>
+        </div>
+    </div>
+    </div>
+
+    <%- include('./partials/footer') %>
+    

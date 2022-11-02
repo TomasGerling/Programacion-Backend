@@ -1,0 +1,43 @@
+include layouts/main.pug
+hr
+div
+    div(class='row')
+        div(class='col-6 mx-auto')
+        h3 New Product
+        form(
+            id='formulario-crear-producto'
+            action='/api/products'
+            method='POST'
+        )
+            div(class='mb-3')
+            label(for='title' class='form-label') Title
+            input(
+                type='text'
+                class='form-control'
+                id='title'
+                name='title'
+                placeholder='Enter the title of the article'
+            )
+            div(class='mb-3')
+            label(for='price' class='form-label') Price
+            div(class='input-group mb-3')
+                span(class='input-group-text') $
+                input(
+                name='price'
+                type='number'
+                class='form-control'
+                aria-label='Price'
+                )
+            div(class='mb-3')
+            label(for='thumbnail' class='form-label') URL Image
+            input(
+                type='text'
+                class='form-control'
+                id='thumbnail'
+                name='thumbnail'
+                placeholder='Enter the url of the image'
+            )
+            div(class='col-auto d-flex justify-content-between')
+            button(type='submit' class='btn btn-primary mb-3') Save
+            a(href='/products')
+                button(type='button' class='btn btn-primary mb-3') View products

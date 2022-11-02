@@ -1,6 +1,6 @@
 const router = require('express').Router()
 
-const products = require('./products')
+const products = require('./products/products.router')
 
 router.use('/products', products)
 

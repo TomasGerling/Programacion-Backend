@@ -1,0 +1,37 @@
+<div class='row'>
+    <div class='col-6 mx-auto'>
+        <a href='/'>
+        <button type='button' class='btn btn-primary mb-3'>
+            Homepage
+        </button>
+        </a>
+        <div class='col'>
+        {{#if hasContent}}
+            <table class='table'>
+            <thead>
+                <tr>
+                <th scope='col'>#</th>
+                <th scope='col'>Title</th>
+                <th scope='col'>Price</th>
+                <th scope='col'>Image</th>
+                </tr>
+            </thead>
+            <tbody id='table-content'>
+                {{#each products as |product|}}
+                <tr>
+                    <th scope='row'>{{id}}</th>
+                    <td>{{product.title}}</td>
+                    <td>{{product.price}}</td>
+                    <td><a href='{{product.thumbnail}}'>Link to the image</a></td>
+                </tr>
+                {{/each}}
+            </tbody>
+            </table>
+        {{else}}
+            <p>There are no products uploaded yet</p>
+        {{/if}}
+
+        </div>
+    </div>
+
+</div>
