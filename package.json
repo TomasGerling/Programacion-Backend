@@ -1,21 +1,20 @@
 {
-  "name": "tomi",
+  "name": "express-api-products-1",
   "version": "1.0.0",
-  "description": "prueba",
   "main": "server.js",
+  "license": "MIT",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js",
-    "start:dev": "nodemon server.js"
+    "build": "npm install",
+    "dev": "nodemon -w",
+    "start": "node server.js"
   },
-  "author": "tomi",
-  "license": "ISC",
   "dependencies": {
+    "cors": "^2.8.5",
     "dotenv": "^16.0.3",
     "ejs": "^3.1.8",
     "express": "^4.18.2",
-    "express-handlebars": "^6.0.6",
-    "morgan": "^1.10.0",
-    "pug": "^3.0.2"
+    "nodemon": "^2.0.20",
+    "socket.io": "^4.5.3"
   }
 }

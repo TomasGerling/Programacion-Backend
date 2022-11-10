@@ -1,0 +1,39 @@
+<h3>Enter the product you want to add to the list</h3>
+<form action="/api/products" method="POST" id="productCreateForm">
+  <div class="mb-3">
+    <label for="formGroupExampleInput" class="form-label">Title</label>
+    <input
+      name="title"
+      type="text"
+      class="form-control"
+      id="formGroupExampleInput"
+      placeholder="Enter a title for your product"
+    />
+  </div>
+  <div class="mb-3">
+    <label for="formGroupExampleInput2" class="form-label">Price</label>
+    <input
+      name="price"
+      type="number"
+      class="form-control"
+      id="formGroupExampleInput2"
+      placeholder="Enter a Price"
+    />
+  </div>
+  <div class="mb-3">
+    <label for="formGroupExampleInput" class="form-label">Image (Please put the URL)</label>
+    <input
+      name="thumbnail"
+      type="text"
+      class="form-control"
+      id="formGroupExampleInput"
+      placeholder="Enter a valid url"
+    />
+  </div>
+  <div class="mb-3">
+    <input type="submit" class="btn btn-success w-100" value="Save" />
+  </div>
+</form>
+<script>
+
+</script>

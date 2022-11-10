@@ -1,6 +1,5 @@
-const configEjs = (app) => {
-    app.set('view engine', 'ejs')
-    app.set('views', './views/ejs')
-}
+const ejsConfig = (app) => {
+  app.set("view engine", "ejs");
+};
 
-module.exports = configEjs
+export default ejsConfig;

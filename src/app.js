@@ -1,45 +1,38 @@
-const express = require('express')
-const router = require('./routes')
-const errorResponseMiddleware = require('./middlewares/errorHandler')
-const productService = require('./services/products.service')
-const configHandlebars = require('./config/handlebars')
-// const configPug = require('./config/pug')
-// const configEjs = require('./config/ejs')
-require('dotenv').config()
+import dotenv from "dotenv";
+import express from "express";
+import ejsConfig from "./config/ejs.js";
+import errorHandler from "./middlewares/errorHandler.js";
+import apiRouter from "./routes/api.js";
+import http from "http";
+import { CustomSocket } from "./config/socketio.js";
+import clientRouter from "./routes/client.js";
+import messagesService from "./services/messages.service.js";
+import { chatEvents } from "./controllers/chat.socket.js";
 
-const app = express()
+dotenv.config();
 
-// Middlewares
-app.use(express.json())
-app.use(express.urlencoded({ extended: true }))
+// Express and server socket config
+const app = express();
+const server = http.createServer(app);
+export const socketInstance = new CustomSocket(server);
 
-// Handlebars config
-configHandlebars(app)
+// Templates configure
+ejsConfig(app);
 
-// Pug Configuration
-// configPug(app)
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+app.use(express.static(process.cwd + "/public"));
 
-// EJS Configuration
-// configEjs(app)
+// Client views and API routes
+app.use(clientRouter);
+app.use("/api", apiRouter);
 
-// Routers
-app.use('/api', router)
+// API health check
+app.get("/api/health", (_req, res) => {
+  res.status(200).send();
+  res.render();
+});
 
-// Main Route
-app.get('/', (_req, res) => {
-  res.render('index', { title: 'Hey', message: 'Hello world' })
-})
+app.use(errorHandler);
 
-app.get('/products', (_req, res) => {
-  const products = productService.getAll()
-  res.render('products', {
-    products,
-    hasContent: products.length > 0,
-  })
-})
-
-// Manejador de errores en la aplicacacion
-app.use(errorResponseMiddleware)
-
-// Export module
-module.exports = app
+export default server;

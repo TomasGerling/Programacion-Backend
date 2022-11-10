@@ -1,8 +1,7 @@
-const app = require('./src/app')
+import app from "./src/app.js";
 
-const PORT = process.env.PORT || 8000
-app.set('port', PORT)
+const PORT = process.env.ENVIRONMENT === 'development' ? process.env.PORT : 8080
 
 app.listen(PORT, () => {
-    console.log(`Server up and running on port ` + app.get('port'));
+    console.log('Server running on port ' + PORT)
 })
