@@ -1,4 +1,4 @@
-import productService from '../services/products.service';
+import productService from "../services/products.service.js";
 
 class ProductsController {
   constructor(service) {
