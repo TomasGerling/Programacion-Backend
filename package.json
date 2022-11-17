@@ -1,20 +1,18 @@
 {
-  "name": "express-api-products-1",
-  "version": "1.0.0",
-  "main": "server.js",
-  "license": "MIT",
-  "type": "module",
-  "scripts": {
-    "build": "npm install",
-    "dev": "nodemon -w",
-    "start": "node server.js"
-  },
-  "dependencies": {
-    "cors": "^2.8.5",
-    "dotenv": "^16.0.3",
-    "ejs": "^3.1.8",
-    "express": "^4.18.2",
-    "nodemon": "^2.0.20",
-    "socket.io": "^4.5.3"
-  }
+    "name": "pre-entrega-1",
+    "version": "1.0.0",
+    "main": "server.js",
+    "license": "MIT",
+    "type": "module",
+    "scripts": {
+      "dev": "nodemon -w",
+      "start": "node server.js"
+    },
+    "dependencies": {
+      "cors": "^2.8.5",
+      "dotenv": "^16.0.3",
+      "ejs": "^3.1.8",
+      "express": "^4.18.2",
+      "nodemon": "^2.0.20"
+    }
 }
