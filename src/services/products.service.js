@@ -1,10 +1,10 @@
-import FileSystemContainer from "../db/FileSystemContainer.js";
-import { ProductSaveDTO } from "../dto/products.dto.js";
+import productSocket from "../controllers/product.socket.js";
+import { DbContainer } from "../db/DbContainer.js";
 import HttpError from "../utils/HttpError.js";
 
 class ProductService {
   constructor() {
-    this.repository = new FileSystemContainer("products.txt");
+    this.repository = new DbContainer("products");
   }
   async all() {
     try {
@@ -25,6 +25,7 @@ class ProductService {
   async save(product) {
     try {
       const newProduct = await this.repository.save(product);
+      productSocket.sendEveryone("new_product", newProduct);
       return newProduct;
     } catch (error) {
       throw error;
@@ -40,7 +41,7 @@ class ProductService {
   async remove(id) {
     try {
       await this.repository.remove(id);
-      // Emitir a todos los clientes el nuevo producto creado para su actualizacion en la UI
+      productSocket.sendEveryone("delete_product", id);
     } catch (error) {
       throw error;
     }

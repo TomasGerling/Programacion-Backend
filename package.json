@@ -5,20 +5,24 @@
   "license": "MIT",
   "type": "module",
   "scripts": {
+    "start:db:create":"node db-create.js",
     "build": "npm install",
     "dev": "nodemon .",
     "start": "node server.js"
   },
   "nodemonConfig": {
-    "ignore": ["/src/**/*.json"]
+    "ignore": [
+      "/src/**/*.json"
+    ]
   },
   "dependencies": {
     "cors": "^2.8.5",
     "dotenv": "^16.0.3",
+    "ejs": "^3.1.8",
     "express": "^4.18.2",
-    "lodash": "^4.17.21",
-    "morgan": "^1.10.0",
+    "knex": "^2.3.0",
     "nodemon": "^2.0.20",
-    "uuid": "^9.0.0"
+    "socket.io": "^4.5.4",
+    "sqlite3": "^5.1.2"
   }
 }
