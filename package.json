@@ -5,9 +5,15 @@
   "license": "MIT",
   "type": "module",
   "scripts": {
+    "start:db:create":"node db-create.js",
     "build": "npm install",
-    "dev": "nodemon -w",
+    "dev": "nodemon .",
     "start": "node server.js"
+  },
+  "nodemonConfig": {
+    "ignore": [
+      "/src/**/*.json"
+    ]
   },
   "dependencies": {
     "dotenv": "^16.0.3",
