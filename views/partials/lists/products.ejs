@@ -3,10 +3,10 @@
   <thead>
     <tr>
       <th scope="col">#</th>
-      <th scope="col">Title</th>
-      <th scope="col">Price</th>
-      <th scope="col">Image</th>
-      <th scope="col">Actions</th>
+      <th scope="col">Titulo</th>
+      <th scope="col">Precio</th>
+      <th scope="col">Imagen</th>
+      <th scope="col">Acciones</th>
     </tr>
   </thead>
   <tbody id="product-list">
@@ -19,7 +19,7 @@
         <img
           class="img-thumbnail mx-auto d-block"
           style="width: 70px; aspect-ratio: 1/1"
-          src="<%= product.thumbnail %> "
+          src="<%= product.thumbnail %>"
           alt="<%= product.title %>"
         />
       </td>
@@ -74,7 +74,6 @@
         });
         productList.append(newTableRow);
       };
-
       const deleteProduct = (id) => {
         const productList = document.getElementById("product-list");
         const newHTML = Array.from(
@@ -88,6 +87,7 @@
         productList.innerHTML = "";
         newHTML.forEach((element) => productList.append(element));
       };
+      // ADD NEW PRODUCT
       document
         .getElementById("productCreateForm")
         .addEventListener("submit", async (e) => {
@@ -100,6 +100,7 @@
           });
           e.target.reset()
         });
+      // DELETE PRODUCTS
       const buttons = document.getElementsByClassName("delete-btn")
       Array.from(buttons).forEach((btn) => {
         btn.addEventListener("click", async (e) => {
@@ -116,7 +117,6 @@
       socket.on("new_product", (product) => {
         addProduct(product);
       });
-
       socket.on("delete_product", (id) => {
         deleteProduct(id);
       });
